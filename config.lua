@@ -4,9 +4,6 @@ Config = {}
 Config.frameworkObj = "QB" -- "QB" or "ESX" or "none" (if you don't use any framework it will execute by /fameboy)
 Config.AdminOnly = true -- true or false to lock the /fameboy command to admins only
 
--- Emotes to use for the fameboy, RPEmotes or ScullyEmoteMenu, "RP" or "Scully" accordingly
-Config.Emotes = "RP"
-
 -- do not change unless you know what you're doing
 Config.GPUList = {
 	[1] = "ETX2080",
