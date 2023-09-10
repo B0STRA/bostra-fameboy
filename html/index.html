@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/reset.css" type="text/css">
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+		<meta charset="UTF-8">
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body id = "body" style = "display:none">
+		<<div class="gameboy" id="GameBoy">
+		<div id = "cont">
+			<progress id="loading" max="100" value="80"></progress>
+			<iframe id = "browser" src="" frameborder="0" scrolling="no">
+			</iframe>
+			<div class="nintendo2">FAMEBOY</div>
+			</div>
+			<div class="nintendo">BOSTRA</div>
+		<div class="cont">
+		  
+		  <div class="screen">
+			<div class="indicator">
+			  <div class="led"></div>
+			  <span class="arc" style="z-index:2"></span>
+			  <span class="arc" style="z-index:1"></span>
+			  <span class="arc" style="z-index:0"></span>
+			</div>
+		  </div>
+		  
+		  <canvas class="display" id="mainCanvas"></canvas>
+		</div>
+		
+		<div class="controls">
+		  <div class="dpad">
+			<div onclick="up()" class="up"><i class="fa fa-caret-up"></i></div>
+			<div class="right"><i class="fa fa-caret-right"></i></div>
+			<div onclick="down()" class="down"><i class="fa fa-caret-down"></i></div>
+			<div class="left"><i class="fa fa-caret-left"></i></div>
+			<div class="middle"></div>
+		  </div>
+		  <div class="a-b">
+			<div class="b" onclick="b()">B</div>
+			<div class="a" onclick="a()">A</div>
+		  </div>
+		</div>
+		<div class="speaker"></div>
+		<div class="start-select">
+		  <div class="select" onclick="select()">SELECT</div>
+		  <div class="start" onclick="start()">START</div>
+		</div>
+		<div class="power">
+			<a id = "off_pc">Power Off Fameboy</a>
+		  </div>
+		<script src="./scripts/listener.js" type="text/javascript"></script>
+	</body>
+</html>
+
+<script>
+	setInterval(function(){
+		if(gaming){
+			document.getElementById("browser").contentWindow.focus();
+		}
+	},50);
+</script>
