@@ -3,7 +3,7 @@ games { 'gta5' }
 
 author 'Bostra'
 description 'Fameboy Game Console System'
-version '1.1.0'
+version '2.0.0'
 lua54 'yes'
 
 shared_scripts {

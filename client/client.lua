@@ -1,8 +1,8 @@
-function openConsoleMenu(listGames, console_)
+ConsoleOpen = false
+function OpenConsoleMenu(listGames, console_)
 	local FameBoy = {}
     local console = console_
     local index = 0
-
     for key, value in pairs(listGames) do
         index = index + 1
 		FameBoy[#FameBoy + 1] = {
@@ -14,30 +14,40 @@ function openConsoleMenu(listGames, console_)
 				gpu = console.consoleGPU,
 				cpu = console.consoleCPU
 			}
-
 		}
     end
-
 	lib.registerContext({
 		id = "arcade_menu",
 		title = "Fame Boy:",
 		icon = "gamepad",
 		iconColor = "#ff0000",
 		onExit = function()
-		if Config.Emotes == "RP" then
-			exports.rpemotes:EmoteCancel(forceCancel)
-		elseif Config.Emotes == "Scully" then
-			exports.scully_emotemenu:CancelAnimation(forceCancel)
-		end
+		ClearPedTasks(PlayerPedId())
+		DeleteEntity(FameboyProp)
 		end,
 		options = FameBoy
 	})
-
 	lib.showContext("arcade_menu")
 end
 
+function StartScene()
+	local model = "fameboy"
+	RequestAnimDict("amb@code_human_wander_texting_fat@male@base")
+	while not HasAnimDictLoaded("amb@code_human_wander_texting_fat@male@base") do
+		Wait(0)
+	end
+	RequestModel(model)
+	while not HasModelLoaded(model) do
+		Wait(0)
+	end
+	FameboyProp = CreateObject(model, GetEntityCoords(PlayerPedId()), true, true, false)
+	AttachEntityToEntity(FameboyProp, PlayerPedId(), 90, -0.012811991906801, -0.0047054325280712, -0.062918639160292, 0, 0, 0, true, true, false, true, 1, true)
+	TaskPlayAnim(PlayerPedId(), "amb@code_human_wander_texting_fat@male@base", "static", 8.0, 8.0, -1, 1, 0, false, false, false)
+	ConsoleOpen = true
+end
+
 RegisterNetEvent("bostra-fameboy:client:startGame", function(data)
-	usingConsole = true
+	ConsoleOpen = true
 	SendNUIMessage({
 		type = "on",
 		game = data.game,
@@ -48,16 +58,12 @@ RegisterNetEvent("bostra-fameboy:client:startGame", function(data)
 end)
 
 RegisterNetEvent('bostra-fameboy:open:console', function(console)
-	openConsoleMenu(console.consoleType, console)
-	if Config.Emotes == "RP" then
-		exports.rpemotes:EmoteCommandStart('fameboy', 0)
-	elseif Config.Emotes == "Scully" then
-		exports.scully_emotemenu:PlayByCommand('fameboy')
-	end
+	OpenConsoleMenu(console.consoleType, console)
+	StartScene()
 end)
 
 RegisterNetEvent('bostra-fameboy:close:console', function()
-	if usingConsole then
+	if ConsoleOpen then
 		SendNUIMessage({
 			type = "off",
 			game = "",
@@ -67,15 +73,11 @@ RegisterNetEvent('bostra-fameboy:close:console', function()
 		EnableAllControlActions(0)
 		EnableAllControlActions(1)
 		EnableAllControlActions(2)
-		FreezeEntityPosition(ped, false)
 		ClearPedTasks(ped)
-		if Config.Emotes == "RP" then
-			exports.rpemotes:EmoteCancel(forceCancel)
-		elseif Config.Emotes == "Scully" then
-			exports.scully_emotemenu:CancelAnimation(forceCancel)
-		end
-		usingConsole = false
 	end
+	SetEntityAsNoLongerNeeded(FameboyProp)
+	DeleteEntity(FameboyProp)
+	ConsoleOpen = false
 end)
 
 RegisterNUICallback('exit', function()
@@ -94,16 +96,10 @@ CreateThread(function()
         local modelHash = arcadeData.hash
         local coords = arcadeData.coords
         local heading = arcadeData.heading
-
-        -- Request the model
         RequestModel(modelHash)
-        
-        -- Wait for the model to load
         while not HasModelLoaded(modelHash) do
             Wait(0)
         end
-
-        -- Add the boxzone to the arcade model
 		if coords then
         exports['qb-target']:AddBoxZone("arcade_" .. modelHash, coords, 1.5, 1.6, {
             name = "arcade_" .. modelHash,
@@ -146,3 +142,10 @@ CreateThread(function()
     end
 end)
 end
+
+AddEventHandler('onResourceStop', function(resource)
+	if resource == GetCurrentResourceName() then
+		DeleteEntity(FameboyProp)
+		TriggerEvent('bostra-fameboy:close:console')
+	end
+end)
