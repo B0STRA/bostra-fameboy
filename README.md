@@ -1,5 +1,5 @@
 # Bostra-Fameboy
-![fameboy](https://github.com/B0STRA/bostra-fameboy/assets/119994243/92f10a59-e750-4791-b057-67f5ba3b08a2)
+![fameboy](https://github.com/B0STRA/bostra-fameboy/assets/119994243/6430173e-0047-4817-beaa-ed882392946a)
 
 
 
