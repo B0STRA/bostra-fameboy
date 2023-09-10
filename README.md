@@ -1,6 +1,7 @@
 # Bostra-Fameboy
+![fameboy](https://github.com/B0STRA/bostra-fameboy/assets/119994243/92f10a59-e750-4791-b057-67f5ba3b08a2)
 
-![bostra-hairstyle](https://github.com/B0STRA/bostra-hairstyle/assets/119994243/bd419e7b-59c9-4ab1-9ceb-627c3885946b)
+
 
 
 **Features:**
