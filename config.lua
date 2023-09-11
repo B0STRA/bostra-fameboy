@@ -18,7 +18,7 @@ Config.CPUList = {
 	[3] = "U3_6300",
 	[4] = "BENTIUM",
 }
-Config.useArcades = true -- true or false to enable/disable arcade machines with Retro games list
+Config.useArcades = true -- true or false to enable/disable arcade machines with Retro games list USES QB TARGET
 Config.arcadeModelHashes = {
 	{ hash = -165961666, coords = vector3(-1554.33, -450.19, 39.52), heading = 319.71 }, --Add props at coords or by model, 
 	{ hash = -1501557515, coords = vector3(-1558.38, -446.76, 39.52), heading = 319.71 },
