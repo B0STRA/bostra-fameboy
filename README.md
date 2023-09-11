@@ -15,7 +15,7 @@
 * Custom prop. 
 
 
-# [Preview-Video](https://www.youtube.com/watch?v=tBoU1iOjKmA)
+# [Preview-Video](https://medal.tv/games/gta-v/clips/U2XYQKE7xqxUn/N3wBf16pZo6T)
 
 
 
