@@ -13,6 +13,8 @@
 * Standalone Framework-wise as there's no framework dependencies if not using item or QB notify. QB/ESX item setup, I don't use esx so test or pr at your will. 
 * Command or Item use.
 * Custom prop. 
+* Arcade Model for basic games, OX/QB Target support. 
+* Unique animations per console or arcade machine use. 
 
 
 # [Preview-Video](https://medal.tv/games/gta-v/clips/U2XYQKE7xqxUn/N3wBf16pZo6T)
