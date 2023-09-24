@@ -1,7 +1,8 @@
 Config = {}
-
+Config.Debug = true
 -- Which translation you wish to use ?
 Config.frameworkObj = "QB" -- "QB" or "ESX" or "none" (if you don't use any framework it will execute by /fameboy)
+Config.Target = "qb" -- "ox" or "qb"
 Config.AdminOnly = true -- true or false to lock the /fameboy command to admins only
 
 -- do not change unless you know what you're doing
@@ -20,8 +21,8 @@ Config.CPUList = {
 }
 Config.useArcades = true -- true or false to enable/disable arcade machines with Retro games list USES QB TARGET
 Config.arcadeModelHashes = {
-	{ hash = -165961666, coords = vector3(-1554.33, -450.19, 39.52), heading = 319.71 }, --Add props at coords or by model, 
-	{ hash = -1501557515, coords = vector3(-1558.38, -446.76, 39.52), heading = 319.71 },
+	{ hash = `-165961666`, coords = vector3(-1554.33, -450.19, 39.52), heading = 319.71 }, --Add props at coords or by model, 
+	{ hash = `-1501557515`, coords = vector3(-1558.38, -446.76, 39.52), heading = 319.71 },
 	{ hash = `prop_arcade_01` },
 	{ hash = `ch_prop_arcade_degenatron_01a` },
 	{ hash = `ch_prop_arcade_monkey_01a` },

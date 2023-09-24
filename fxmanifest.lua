@@ -3,7 +3,7 @@ games { 'gta5' }
 
 author 'Bostra'
 description 'Fameboy Game Console System'
-version '2.0.0'
+version '2.1.0'
 lua54 'yes'
 
 shared_scripts {
@@ -11,15 +11,11 @@ shared_scripts {
 }
 
 client_scripts {
-	"locale.lua",
-	"locales/*.lua",
 	"config.lua",
 	"client/client.lua",
 }
 
 server_scripts {
-	"locale.lua",
-	"locales/*.lua",
 	"config.lua",
 	"server/server.lua",
 }
@@ -27,7 +23,6 @@ server_scripts {
 files {
 	"html/css/style.css",
 	"html/css/reset.css",
-	"html/css/img/monitor.png",
 	"html/*.html",
 	"html/scripts/listener.js",
 	"stream/*.*",
