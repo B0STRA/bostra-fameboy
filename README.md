@@ -57,9 +57,8 @@
 [ox_lib](https://github.com/overextended/ox_lib)
 
 
- <h1>Support</h1>
-<u1>
+# Troubleshooting & Support
+[Mustache Scripts - Discord](https://discord.gg/RVx8nVwcEG)
 
-[md-scripts Discord](https://discord.gg/RVx8nVwcEG)
-
-</u1>
+# Tip / Commission Me
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A46AZW4)
