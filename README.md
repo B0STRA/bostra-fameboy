@@ -60,12 +60,6 @@
  <h1>Support</h1>
 <u1>
 
-[Bostra-Development Discord](https://dsc.gg/bostra)
-
-</u1>
-
-<u1>
-
 [md-scripts Discord](https://discord.gg/RVx8nVwcEG)
 
 </u1>
